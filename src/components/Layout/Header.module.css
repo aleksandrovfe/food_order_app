@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    box-sizing: border-box;
+    height: 100px;
+    background-color: #c5e1a5;
+}
+
+.title {
+    font-style: italic;
+    font-weight: 200;
+}
