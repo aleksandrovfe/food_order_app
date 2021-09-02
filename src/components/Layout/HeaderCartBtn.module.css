@@ -26,3 +26,21 @@
 .btn__cart-text {
     font-size: 18px;
 }
+
+.bump {
+    background-color: #72ff00;
+    animation: btnAnimation;
+    animation-duration: 0.3s;
+}
+
+@keyframes btnAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

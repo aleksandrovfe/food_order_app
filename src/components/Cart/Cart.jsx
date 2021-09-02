@@ -1,36 +1,40 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import classes from './Cart.module.css'
 import {Modal} from "../UI/Modal";
+import {CartContext} from "../../store/cart-context";
+import {CartItem} from "./CartItem";
 
-export const Cart = () => {
-    const [cartItems, setCartItems] = useState([{
-        id: 'c1', name: 'Suchi', price: 12.21
-    }])
+export const Cart = ({onHideCart}) => {
+    const cartCtx = useContext(CartContext)
+    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`
+    const hasItems = cartCtx.items.length > 0
 
-    if (cartItems.length === 0) {
-        return (
-            <Modal>
-                <p>No Items</p>
-            </Modal>
-        )
-    } else {
-        return (
-            <Modal>
-                {cartItems.map(item => (
-                    <div>
-                        <p>{item.name}</p>
-                        <p>{item.price}</p>
-                    </div>
-                ))}
-                <div className={classes['total-amount']}>
-                    <span className={classes['total-amount__text']}>Total amount</span>
-                    <span className={classes['total-amount__price']}>35.63</span>
-                </div>
-                <div className={classes['cart-actions']}>
-                    <button className={classes['cart-actions__btn']}>Close</button>
-                    <button className={classes['cart-actions__btn']}>Order</button>
-                </div>
-            </Modal>
-        )
+    const addItemHandler = (item) => {
+        cartCtx.addItem({...item, amount: 1})
     }
+
+    const removeItemHandler = (id) => {
+        cartCtx.removeItem(id)
+    }
+
+    return (
+        <Modal className={classes.modal__cart}>
+            {cartCtx.items.map(item => (
+               <CartItem
+                   key={item.id}
+                   item={item}
+                   onAddItem={() => addItemHandler(item)}
+                   onRemoveItem={() => removeItemHandler(item.id)}
+               />
+            ))}
+            <div className={classes['total-amount']}>
+                <span className={classes['total-amount__text']}>Total amount</span>
+                <span className={classes['total-amount__price']}>{totalAmount}</span>
+            </div>
+            <div className={classes['cart-actions']}>
+                <button className={classes['cart-actions__btn']} onClick={onHideCart}>Close</button>
+                {hasItems && <button className={classes['cart-actions__btn']}>Order</button>}
+            </div>
+        </Modal>
+    )
 }

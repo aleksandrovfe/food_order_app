@@ -5,7 +5,7 @@ export const Modal = (props) => {
     const ModalPortal = (props) => {
         return (
             <div className={classes.modal__wrapper}>
-                <div className={classes.modal}>
+                <div className={`${classes.modal} ${props.className}`}>
                     {props.children}
                 </div>
             </div>
