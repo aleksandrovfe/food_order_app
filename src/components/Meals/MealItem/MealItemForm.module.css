@@ -1,0 +1,25 @@
+.from__input {
+    border: 0;
+    box-shadow: 1px 1px 5px 1px lightgreen;
+    border-radius: 10px;
+    width: 20px;
+    padding: 10px 20px;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
+}
+
+.form button {
+    color: white;
+    background-color: lightgreen;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form button:hover {
+    box-shadow: 1px 1px 5px 1px lightgreen;
+}

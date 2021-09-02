@@ -1,0 +1,22 @@
+.meal-item__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meal-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.name {
+    margin: 0 0 5px 0;
+}
+
+.desc {
+    margin: 0 0 20px;
+}
+
+.price {
+    margin: 0;
+}

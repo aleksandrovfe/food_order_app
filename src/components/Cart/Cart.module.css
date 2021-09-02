@@ -1,0 +1,27 @@
+.total-amount__text {
+    margin: 0 10px 0 0;
+    font-weight: 100;
+}
+
+.total-amount__price {
+    margin: 0;
+    font-size: 20px;
+}
+
+.cart-actions {
+    padding: 20px 0;
+}
+
+.cart-actions__btn {
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+
+.cart-actions__btn:hover {
+    color: white;
+    background-color: #c5e1a5;
+}
