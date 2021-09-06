@@ -1,0 +1,8 @@
+.meals-list {
+    background-color: white;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}

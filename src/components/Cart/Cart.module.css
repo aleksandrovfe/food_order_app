@@ -1,0 +1,47 @@
+.modal__cart {
+    overflow: auto;
+    max-height: 100vh;
+    max-width: 300px;
+    width: 100%;
+}
+
+.cart__item p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0 0 0;
+}
+
+.total-amount__text {
+    margin: 0 10px 0 0;
+    font-weight: 100;
+}
+
+.total-amount__price {
+    margin: 0;
+    font-size: 20px;
+}
+
+.cart-actions {
+    padding: 20px 0;
+}
+
+.cart-actions__btn {
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    padding: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+
+.cart-actions__btn:hover {
+    color: white;
+    background-color: #c5e1a5;
+}
